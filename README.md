@@ -13,7 +13,7 @@ In addition to installing the necessary packages (see "import" commands in hc\_e
 
 
 ## References
-The data are provided by [van der Heuvel and colleagues (2018)](https://doi.org/10.1371/journal_pone.0200412) and were made available as part of a (grand challenge)[http://hc18.grand-challenge.org]. A version of this code was submitted as a project during the Deep-Learning Course (Data Scientist Certificate) from [alfatraining](https://www.alfatraining.com). The U-Net architecture was developed by [Ronneberger and colleagues (2015)](https://arxiv.org/abs/1505.04597) and implemented in pytorch by [Pavel Iakubovski](qubvel/segmentation_models.pytorch). The model implementation is inspired by Maxim Kovito [Nerve Segmentation with Ultrasound], which also uses Early Stopping by [Bjarte Mehus Sunde]. The fitting of the ellipse and the calculation of circumference are from code by Christian Hill [Scipython.com]  
+The data are provided by [van der Heuvel and colleagues (2018)](https://doi.org/10.1371/journal.pone.0200412) and were made available as part of a [grand challenge](http://hc18.grand-challenge.org). A version of this code was submitted as a project during the Deep-Learning Course (Data Scientist Certificate) from [alfatraining](https://www.alfatraining.com). The U-Net architecture was developed by [Ronneberger and colleagues (2015)](https://arxiv.org/abs/1505.04597) and implemented in pytorch by [Pavel Iakubovski](https://github.com/qubvel/segmentation_models.pytorch). The model implementation is inspired by Maxim Kovito [Nerve Segmentation with Ultrasound]. The fitting of the ellipse and the calculation of circumference are from code by Christian Hill [Scipython.com]  
 
 ## Output Images
 Example of training data:
