@@ -20,7 +20,8 @@ Example of training data:
 
 ![Example of training data](assets/images/example_training_image.png)
 
-Example of validation data:
+Example of test data:
 
-Loss and Accuracy:
+![Example of test data](assets/images/example_test_image.png)
+
 
