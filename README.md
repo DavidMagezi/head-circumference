@@ -9,7 +9,7 @@ This code presents a method to automatically estimate the head-circumference of 
 The data is from [zenodo](https://zenodo.org/record/1327317#.ZCqRwbxBzCk).
 
 The code runs in python using [pytorch](https://pytorch.org). 
-In addition to installing the necessary packages (see "import" commands in hc\_estimation\_with\_unet.py and ellipse.py), [early-stopping](https://github.com/Bjarten/early-stopping-pytorch) code needs to be added to the folder.
+In addition to installing the necessary packages (see "import" commands in hc\_estimation\_with\_unet.py and [ellipse.py](ellipse.py)), [early-stopping](https://github.com/Bjarten/early-stopping-pytorch) code needs to be added to the folder.
 
 
 ## References
