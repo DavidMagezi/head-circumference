@@ -21,4 +21,4 @@ Loss and Accuracy:
 
 ## Links
 
-[home page] (www.magezi.com)
+[home page] [test] (www.magezi.com)
