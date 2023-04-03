@@ -1,34 +1,7 @@
-#!/bin/python
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.14.4
-#   kernelspec:
-#     display_name: Python 3
-#     language: python
-#     name: python3
-# ---
-
 # %%[markdown]
-# Author: David A Magezi (2023) 
-# Most of the below has been modified from: 
-# Maxim Kovito (2021) Nerve_segmentation_UNet, an entry of the Ultrasound Nerve Segmentation competition on kaggle
-# https://www.kaggle.com/code/maximkovito/nerve-segmentation-unet
-
-# Early Stopping module from Bjarte Mehus Sunde
-# git clone https://github.com/Bjarten/early-stopping-pytorch.git
-# mkdir ./early-stopping
-# mv ./early-stopping-pytorch ./early-stopping
-
+# Copyright (2023) David A. Magezi
 # %%
-# To Do
-# Bildgroße (consider pixes size)?
-# Augmentation #=> Rotation/Translation? 
-
+data_dir = Path('..','13','medical_data','grand_challenge','us_data_2D') 
 
 # %%[markdown]
 # Bibliotheken
@@ -45,7 +18,7 @@ import segmentation_models_pytorch as smp
 from segmentation_models_pytorch import utils
 import sys
 import torch
-from torch.utils.data import Dataset, DataLoader #, sampler
+from torch.utils.data import Dataset, DataLoader 
 import torchvision
 
 # %%
@@ -242,7 +215,6 @@ class FetalHeadDataset(Dataset):
     
 
 # %%
-data_dir = Path('..','13','medical_data','grand_challenge','us_data_2D') 
 train_dir = data_dir.joinpath('training_set')
 test_dir = data_dir.joinpath('test_set')
 
@@ -253,8 +225,6 @@ else:
     print("ERROR: Data directories not found")
 
 # %%
-#print(len(data))
-#data.get_files()
 
 # %%
 random_seed = 42
@@ -391,7 +361,7 @@ for epoch in range(epochs):
 
 # %%
 # Save model paramaters
-torch.save(model.state_dict(),'./model_parameters_50_epochs.binary')
+torch.save(model.state_dict(),'./model_parameters.binary')
 
 # %%
 #model.load_state_dict(torch.load('./model_parameters.binary'))
@@ -440,13 +410,11 @@ for i in range(n_plot_columns):
     if torch.cuda.is_available():
         v_image = v_image.cuda()
 
-    #print(np.concatenate(data.get_image_size()))  
     # need to create 4D image here
     v_image_4D = torch.reshape(v_image,(1,1,)+data.get_image_size())
     pred_v = unet(v_image_4D)
     pred_v = pred_v.cpu().detach().numpy()
 
-    #print(np.shape(pred_v))
     estimated_head_circumference = head_shape.estimate_circumference(data.get_pixel_size(valid_idx),data.get_original_dimensions(valid_idx),data.get_image_size()) 
     hc_valid_pred = "{:4.1f}".format(estimated_head_circumference)
 
@@ -458,17 +426,15 @@ for i in range(n_plot_columns):
         #ax_valid[2][i].yaxis.set_view_interval(0,image_height)
     else:
         ax_valid[2].imshow(np.transpose(pred_v[0], (1, 2, 0)))
+        ax_valid[2].set_title('pred' + ' (' +  hc_valid_pred + 'mm)') 
         #ax_valid[2].set_box_aspect(1.0)
         #ax_valid[2].xaxis.set_view_interval(0,image_width)
         #ax_valid[2].yaxis.set_view_interval(0,image_height)
-        #ax_valid[2].set_title('fitted ellipse' + ' (' +  hc + 'mm)') 
-        ax_valid[2].set_title('pred' + ' (' +  hc_valid_pred + 'mm)') 
 
 
 # %%
 test_data = FetalHeadDataset(test_dir,is_test=True)
-#test_dl = DataLoader(test_data, batch_size=1, shuffle=False)
-#len(test_data)
+len(test_data)
 
 # %% [markdown]
 # Example Image from test
@@ -505,13 +471,5 @@ ax_test[3].yaxis.set_view_interval(0,image_height)
 ax_test[3].yaxis.set_inverted(True)
 estimated_head_circumference_pred = test_head_shape.estimate_circumference(test_data.get_pixel_size(example_test_image),test_data.get_original_dimensions(example_test_image),test_data.get_image_size()) 
 hc_pred = "{:4.1f}".format(estimated_head_circumference_pred)
-#ax_test[3].set_title('fitted_ellipse')
 ax_test[3].set_title('fitted ellipse' + ' (' +  hc_pred + 'mm)') 
 fig_test.savefig(figure_dir.joinpath('example_test_image.png'))
-
-# %%
-# Find Lee et al. (2019) - Segmentation began with a candidate shape
-# Perhaps find it in Bohlender et al. (NOT preprint)
-# Add Figure of fitted ellipse also to validation figures []
-# Remove distribution plots[]
-# Correct blank images in training
