@@ -6,9 +6,11 @@ This code presents a method to automatically estimate the head-circumference of 
 
 ## Requirements
 
-Download data from [zenodo](https://zenodo.org/record/1327317#.ZCqRwbxBzCk)
-This code is written in python using pytorch. 
-It also uses : Early Stopping 
+The data is from [zenodo](https://zenodo.org/record/1327317#.ZCqRwbxBzCk).
+
+The code runs in python using [pytorch](https://pytorch.org). 
+In addition to installing the necessary packages,[early-stopping](https://github.com/Bjarten/early-stopping-pytorch) code needs to be added to the folder.
+
 
 ## Acknowledgements
 The data are provided by van der Heuvel et al. (2018) 
