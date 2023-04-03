@@ -2,7 +2,7 @@
 
 ## Description
 
-This code presents a method to automatically estimate the head-circumference of a fetus from ultrasound images in the ["standard"] plane. It utilises a deep-neural network (U-Net architecture). Importantly, there are no explicit shape constraints built-into the model (see for example Bohlender et al 2022).
+This code presents a method to automatically estimate the head-circumference of a fetus from ultrasound images. It utilises a deep-neural network with [U-Net] (https://en.wikipedia.org/wiki/U-Net). Importantly, there are no explicit shape constraints built-into the model (see for example Bohlender et al 2022).
 
 ## Requirements
 Download data from [zenodo]
@@ -21,4 +21,4 @@ Loss and Accuracy:
 
 ## Links
 
-[home page] [test] (www.magezi.com)
+[home page] (www.magezi.com)
