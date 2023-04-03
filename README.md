@@ -9,11 +9,11 @@ This code presents a method to automatically estimate the head-circumference of 
 The data is from [zenodo](https://zenodo.org/record/1327317#.ZCqRwbxBzCk).
 
 The code runs in python using [pytorch](https://pytorch.org). 
-In addition to installing the necessary packages (see "import" commands in hc\_estimation\_with\_unet.py and ellipse.py),[early-stopping](https://github.com/Bjarten/early-stopping-pytorch) code needs to be added to the folder.
+In addition to installing the necessary packages (see "import" commands in hc\_estimation\_with\_unet.py and ellipse.py), [early-stopping](https://github.com/Bjarten/early-stopping-pytorch) code needs to be added to the folder.
 
 
-## Acknowledgements
-The data are provided by van der Heuvel et al. (2018) 
+## References
+The data are provided by [van der Heuvel and colleagues (2018)](https://doi.org/10.1371/journal_pone.0200412) and were made available as part of a (grand challenge)[http://hc18.grand-challenge.org]. A version of this code was submitted as a project during the Deep-Learning Course (Data Scientist Certificate) from [alfatraining](https://www.alfatraining.com). The U-Net architecture was developed by [Ronneberger and colleagues (2015)](https://arxiv.org/abs/1505.04597) and implemented in pytorch by [Pavel Iakubovski](qubvel/segmentation_models.pytorch). The model implementation is inspired by Maxim Kovito [Nerve Segmentation with Ultrasound], which also uses Early Stopping by [Bjarte Mehus Sunde]. The fitting of the ellipse and the calculation of circumference are from code by Christian Hill [Scipython.com]  
 
 ## Output Images
 Example of training data:
