@@ -18,14 +18,14 @@ The data are provided by [van der Heuvel and colleagues (2018)](https://doi.org/
 ## Output Images
 Example of training data:
 
-![Example of training data](assets/images/example_training_image.png)
+![Example of training data](assets/images/example_trainingpng.png)
 
 Example of validation data:
 
-![Example of validation data](assets/images/example_test_image.png)
+![Example of validation data](assets/images/example_validationpng.png)
 
 Example of test data:
 
-![Example of test data](assets/images/example_test_image.png)
+![Example of test data](assets/images/example_testpng.png)
 
 
