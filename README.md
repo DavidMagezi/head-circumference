@@ -7,7 +7,7 @@ This code presents a method to automatically estimate the head-circumference of 
 ## Requirements
 
 The data is from [zenodo](https://zenodo.org/record/1327317#.ZCqRwbxBzCk).
-Download the data and change the value of data\_dir in [hc\_estimation\_with\_unet.py (line 4)](hc\_estimation\_with\_unet.py) to the location of your local copy.
+Download the data and change the value of data\_dir in [main.py (line 15)](hc\_estimation\_with\_unet.py) to the location of your local copy.
 
 The code runs in python using [pytorch](https://pytorch.org). 
 In addition to installing the necessary packages (see "import" commands in [hc\_estimation\_with\_unet.py](hc\_estimation\_with\_unet.py) and [ellipse.py](ellipse.py)), [early-stopping](https://github.com/Bjarten/early-stopping-pytorch) code needs to be added to the current folder.
