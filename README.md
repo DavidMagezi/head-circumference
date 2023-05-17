@@ -20,6 +20,10 @@ Example of training data:
 
 ![Example of training data](assets/images/example_training_image.png)
 
+Example of validation data:
+
+![Example of validation data](assets/images/example_test_image.png)
+
 Example of test data:
 
 ![Example of test data](assets/images/example_test_image.png)
