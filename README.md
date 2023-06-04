@@ -30,4 +30,4 @@ Example of test data:
 
 
 ## Future work
-Currently the fitting of the ellipse is based on a [least-squares method ](https://en.wikipedia.org/wiki/Least_squares), which is too senstitive to extra-cranial artefacts. To reduct this, future versions will use an [active geometry shape model](https://doi.org/10.1016/j.cviu.2012.08.004) based on (gradient vector flow )(https://www.iacl.ece.jhu.edu/static/gvf/).
+Currently the fitting of the ellipse is based on a [least-squares method ](https://en.wikipedia.org/wiki/Least_squares), which is too senstitive to extra-cranial artefacts. To reduct this, future versions will use an [active geometry shape model](https://doi.org/10.1016/j.cviu.2012.08.004) based on [gradient vector flow ](https://www.iacl.ece.jhu.edu/static/gvf/).
